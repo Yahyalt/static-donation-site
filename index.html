@@ -16,20 +16,71 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="container my-5">
+    <main class="container my-5"></main>
         <h2 class="text-center mb-4">Program Sosial Baitul Maal</h2>
         
         <!-- Program Description -->
         <div class="card mb-4">
             <div class="card-body">
                 <h4>📋 Program Kami</h4>
-                <p>Bantuan untuk:
-                    <ul>
-                        <li><a href="/gallery/yatim-piatu.html">Yatim Piatu</a></li>
-                        <li>Dhuafa</li>
-                        <li>Bencana Alam</li>
-                    </ul>
-                </p>
+                <ul>
+                    <li><a href="/gallery/yatim-piatu.html">Yatim Piatu</a></li>
+                    <li>Dhuafa</li>
+                    <li>Bencana Alam</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card mb-4">
+            <div class="card-body">
+                <h4>📸 Dokumentasi Program</h4>
+                <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <!-- Carousel Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    
+                    <!-- Carousel Items -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="3000">
+                            <img src="https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp" 
+                                 class="d-block w-100 carousel-image" 
+                                 alt="Aktivitas 1">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <img src="https://i.ibb.co.com/QCm518C/DALL-E-2025-01-26-14-52-00-An-impactful-and-realistic-illustration-of-a-disaster-scene-showing-a-nat.webp" 
+                                 class="d-block w-100 carousel-image" 
+                                 alt="Aktivitas 2">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <img src="https://i.ibb.co.com/c3cJNZm/DALL-E-2025-01-26-14-56-46-A-dramatic-illustration-of-a-disaster-scene-at-the-National-Monument-Mona.webp" 
+                                 class="d-block w-100 carousel-image" 
+                                 alt="Aktivitas 3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Gallery Section -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h4>🖼️ Dokumentasi</h4>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="gallery-item">
+                            <img src="path/to/image1.jpg" class="img-fluid rounded" alt="Program Yatim">
+                            <div class="overlay">
+                                <a href="/gallery/yatim-piatu.html" class="btn btn-light btn-sm">Lihat Selengkapnya</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -39,19 +90,13 @@
                 <h4>💳 Donasi Sekarang</h4>
                 <div class="row">
                     <div class="col-md-4 mb-3">
-                        <a href="bank-transfer-link" class="btn btn-success w-100">
-                            Bank Transfer
-                        </a>
+                        <a href="bank-transfer-link" class="btn btn-success w-100">Bank Transfer</a>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <a href="dana://donate" class="btn btn-warning w-100">
-                            Dana
-                        </a>
+                        <a href="dana://donate" class="btn btn-warning w-100">Dana</a>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <a href="https://paypal.me/yourlink" class="btn btn-primary w-100">
-                            PayPal
-                        </a>
+                        <a href="https://paypal.me/yourlink" class="btn btn-primary w-100">PayPal</a>
                     </div>
                 </div>
             </div>
@@ -61,20 +106,23 @@
         <div class="card">
             <div class="card-body">
                 <h4>📊 Laporan Keuangan</h4>
-                <a href="reports/laporan-donasi.xlsx" class="btn btn-secondary">
-                    Download Laporan (Excel)
-                </a>
+                <a href="reports/laporan-donasi.xlsx" class="btn btn-secondary">Download Laporan (Excel)</a>
             </div>
         </div>
-    </div>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
-        <p>
-            © 2025 Yahya H. All rights reserved.<br>
-            Baitul Maal - Divisi Sosialisasi
-          </p>
+        <p>© 2025 Yahya H. All rights reserved.<br>Baitul Maal - Divisi Sosialisasi</p>
     </footer>
+
+    <!-- Bootstrap JS (if needed) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+// Auto-advance carousel every 1 second
+const carousel = new bootstrap.Carousel('#mainCarousel', {
+    interval: 3000
+});
+
+    </script>
 </body>
 </html>
-
