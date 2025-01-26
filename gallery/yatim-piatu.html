@@ -1,3 +1,11 @@
+<nav class="navbar navbar-expand-lg bg-primary">
+    <div class="container">
+        <a href="javascript:history.back()" class="btn btn-light ms-auto">
+            &larr; Back to Previous Page
+        </a>
+    </div>
+</nav>
+
 <!-- Add this to your HTML -->
 <section class="gallery">
     <h2>Gallery Program</h2>
@@ -81,11 +89,11 @@
   const expandedImg = document.getElementById('expanded-img');
   const closeBtn = document.querySelector('.close');
   
-  document.querySelectorAll('.gallery-item').forEach(item => {
-    item.addEventListener('click', () => {
+  document.getElementById('galleryContainer').addEventListener('click', (e) => {
+    if (e.target.classList.contains('gallery-item')) {
       lightbox.style.display = 'block';
-      expandedImg.src = item.dataset.full;
-    });
+      expandedImg.src = e.target.dataset.full;
+    }
   });
   
   closeBtn.addEventListener('click', () => {
@@ -111,6 +119,31 @@ const galleryImages = [
     thumb: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp", // Thumbnail URL
     full: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",   // Full-size URL
     alt: "Orphanage Program 2024"
+  },
+  {
+    thumb: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
+    full: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
+    alt: "Food Distribution 2024"
+  },
+  {
+    thumb: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
+    full: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
+    alt: "Food Distribution 2024"
+  },
+  {
+    thumb: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
+    full: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
+    alt: "Food Distribution 2024"
+  },
+  {
+    thumb: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
+    full: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
+    alt: "Food Distribution 2024"
+  },
+  {
+    thumb: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
+    full: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
+    alt: "Food Distribution 2024"
   },
   {
     thumb: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
