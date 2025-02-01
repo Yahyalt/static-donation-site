@@ -1,5 +1,5 @@
 body {
-    background-color: #f8f9fa;
+    background-color: #166b13;
 }
 
 .card {
@@ -8,8 +8,9 @@ body {
 }
 
 h2 {
-    color: #2c3e50;
-    font-weight: bold;
+    color: #ffffff;
+   text-align: center;
+    
 }
 
 .btn {
@@ -92,6 +93,143 @@ h2 {
 }
 
 
+
+
+
+/* Donations Card */
+/* General Styles */
+.donation-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card Design */
+.donation-card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0; /* Remove padding to align title block */
+    transition: transform 0.3s ease;
+}
+
+.donation-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Title Block with Orange Background */
+.card-title {
+    background: #ff7f50; /* Orange color */
+    color: white; /* White text */
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1rem;
+    margin: 0;
+    border-radius: 10px 10px 0 0; /* Rounded top corners */
+}
+
+/* Card Content */
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-description {
+    color: #7f8c8d;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    min-height: 80px;
+}
+
+.donation-amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-top: auto;
+}
+
+.amount-text {
+    color: #ff7f50; /* Orange color */
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.donate-button {
+    background: #ff7f50; /* Orange color */
+    color: white !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.donate-button:hover {
+    background: #e76b3c; /* Darker orange on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .donation-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .donation-cards {
+        grid-template-columns: 1fr;
+    }
+}
+/* endofline */
+
+
+/* LogoCSS */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between logo and text */
+}
+
+.logo {
+    width: 100px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.2; /* Adjust spacing between lines */
+}
+
+.line-1 {
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold;
+    color: #ffffff; /* Adjust text color */
+}
+
+.line-2 {
+    font-size: 20px; /* Adjust font size */
+    color: #ffffff; /* Adjust text color */
+    margin-top: 5px; /* Space between lines */
+}
+
+@media (max-width: 768px) {
+    .logo-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo-text {
+        margin-top: 10px; /* Space between logo and text */
+    }
+}
+/* endofline */
 
 
 
