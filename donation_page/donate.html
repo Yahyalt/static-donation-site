@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation QR Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        h2 {
+            margin-bottom: 15px;
+        }
+        .qr-code {
+            margin: 10px 0;
+            cursor: pointer; /* Makes the QR code look clickable */
+        }
+        .donate-button {
+            display: inline-block;
+            padding: 12px 20px;
+            margin-top: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: #25D366; /* WhatsApp Green */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .donate-button:hover {
+            background-color: #1ebe5d;
+        }
+
+        /* BANK DETAILS SECTION */
+        .bank-details {
+            margin-top: 20px;
+            padding: 15px;
+            background: #ffffff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .bank-logo {
+            width: 90px; /* Adjust logo size */
+        }
+        .bank-info {
+            text-align: left;
+            color: #00796B; /* Teal BSI Color */
+        }
+        .bank-account {
+            font-size: 22px;
+            font-weight: bold;
+            color: #00796B;
+        }
+        .bank-name {
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Scan atau Klik QR Code untuk Donasi</h2>
+        <a id="qr-link" href="https://api.whatsapp.com/send?phone=6282223532223&text=Assalamu%27alaikum%2C%20Insyaallah%20saya%20ingin%20donasi%20listrik%20masjid.%20" target="_blank">
+            <canvas id="qr-code" class="qr-code"></canvas>
+        </a>
+        <p>or click the button below</p>
+        <!-- <a href="https://api.whatsapp.com/send?phone=6282223532223&text=Assalamu%27alaikum%2C%20Insyaallah%20saya%20ingin%20donasi%20listrik%20masjid.%20" 
+           class="donate-button" target="_blank">
+            Donate via WhatsApp -->
+        </a>
+
+        <!-- BANK DETAILS -->
+        <div class="bank-details">
+            <img src="/logo/BSI (Bank Syariah Indonesia) Logo (SVG) - Vector69Com.svg" alt="BSI Logo" class="bank-logo">
+            <div class="bank-info">
+                <div class="bank-account">7227625133</div>
+                <div class="bank-name">a.n ULAZ MKU AMAL MUSLIM</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Generate QR Code
+        var qr = new QRious({
+            element: document.getElementById("qr-code"),
+            value: "https://api.whatsapp.com/send?phone=6282223532223&text=Assalamu%27alaikum%2C%20Insyaallah%20saya%20ingin%20donasi%20listrik%20masjid.%20",
+            size: 200
+        });
+
+        // Convert QR canvas to clickable image
+        document.getElementById("qr-link").href = qr.value;
+    </script>
+
+</body>
+</html>

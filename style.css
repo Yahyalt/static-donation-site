@@ -189,46 +189,58 @@ h2 {
 
 
 /* LogoCSS */
+/* Logo Container */
+/* Centering the logo and text */
 .logo-container {
     display: flex;
-    align-items: center;
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center the whole container horizontally */
     gap: 15px; /* Space between logo and text */
+    width: 100%; /* Ensure it takes the full width */
+    text-align: center;
+    margin: 0 auto; /* Center the whole container */
 }
 
+/* Logo Styling */
 .logo {
     width: 100px; /* Adjust size as needed */
     height: auto; /* Maintain aspect ratio */
 }
 
+/* Text Styling */
 .logo-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    line-height: 1.2; /* Adjust spacing between lines */
+    text-align: left; /* Keep text aligned left */
+    line-height: 1.2;
 }
 
 .line-1 {
-    font-size: 24px; /* Adjust font size */
+    font-size: 54px;
     font-weight: bold;
-    color: #ffffff; /* Adjust text color */
+    color: #ffffff;
 }
 
 .line-2 {
-    font-size: 20px; /* Adjust font size */
-    color: #ffffff; /* Adjust text color */
-    margin-top: 5px; /* Space between lines */
+    font-size: 50px;
+    color: #ffffff;
+    margin-top: 5px;
 }
 
+/* Responsive - Stack on smaller screens */
 @media (max-width: 768px) {
     .logo-container {
         flex-direction: column;
         text-align: center;
+        align-items: center;
     }
 
     .logo-text {
-        margin-top: 10px; /* Space between logo and text */
+        text-align: center;
     }
 }
+
 /* endofline */
 
 
