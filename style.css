@@ -1,6 +1,7 @@
 body {
     background-color: #166b13;
-    margin-bottom: 100px; /* Add space for fixed footer */
+    margin-bottom: 100px; /* Add space for footer */
+    padding-top: 76px; /* Add space for fixed navbar */
 }
 
 .card {
@@ -11,8 +12,6 @@ body {
 h2 {
     color: #ffffff;
    text-align: center;
-  
-    
 }
 
 .btn {
@@ -23,45 +22,116 @@ h2 {
     transform: translateY(-2px);
 }
 
-/* Style the navbar brand (Baitul Maal) */
-.navbar-brand {
-    font-size: 24px; /* Adjust the font size */
-    font-weight: bold; /* Make it bold */
-    color: #ffffff !important; /* Ensure text remains white */
-    text-transform: uppercase; /* Optional: Make text uppercase */
-    letter-spacing: 1px; /* Optional: Add spacing between letters */
-}
-
-/* Add hover effect */
-.navbar-brand:hover {
-    color: #ffcc00 !important; /* Change color on hover */
-    text-decoration: none; /* Remove underline */
-}
-
-/* Center the navbar text */
-.navbar .container {
-    display: flex;
-    justify-content: center; /* Center the navbar brand */
-    align-items: center;
-}
-
-/* Optional: Add a shadow effect */
+/* Enhanced Navbar Styles */
 .navbar {
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1030;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #ffcc00 !important;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+.navbar-brand img {
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Navigation Links */
+.nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    margin: 0 2px;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-top: 8px;
+}
+
+.dropdown-item {
+    padding: 0.7rem 1.5rem;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin: 2px 8px;
+}
+
+.dropdown-item:hover {
+    background-color: #ff7f50;
+    color: white;
+    transform: translateX(5px);
+}
+
+/* Mobile Menu */
+.navbar-toggler {
+    border: 2px solid white;
+    border-radius: 8px;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Mobile Responsive */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .nav-link {
+        color: white !important;
+        margin: 2px 0;
+    }
+    
+    .dropdown-menu {
+        background-color: rgba(255, 255, 255, 0.95);
+        margin-left: 1rem;
+        border-radius: 8px;
+    }
+    
+    body {
+        padding-top: 80px;
+    }
 }
 
 /* Change background color */
 .bg-primary {
-    background-color: #ff7f50 !important; /* Customize primary color */
+    background-color: #ff7f50 !important;
 }
-
-
-
 
 /* Back Button Styles */
 .navbar .btn-back {
-    background-color: #f8f9fa; /* Light color */
-    color: #2c3e50; /* Dark text */
+    background-color: #f8f9fa;
+    color: #2c3e50;
     border: 2px solid #2c3e50;
     border-radius: 25px;
     padding: 8px 20px;
@@ -97,7 +167,11 @@ h2 {
     }
     
     .navbar .btn-back span {
-        display: none; /* Hide text on mobile */
+        display: none;
+    }
+    
+    body {
+        margin-bottom: 120px;
     }
 }
 
@@ -132,9 +206,6 @@ h2 {
     object-fit: cover;
 }
 
-
-
-
 /* Donations Card */
 /* General Styles */
 .donation-cards {
@@ -151,7 +222,7 @@ h2 {
     background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 0; /* Remove padding to align title block */
+    padding: 0;
     transition: transform 0.3s ease;
 }
 
@@ -161,13 +232,13 @@ h2 {
 
 /* Title Block with Orange Background */
 .card-title {
-    background: #ff7f50; /* Orange color */
-    color: white; /* White text */
+    background: #ff7f50;
+    color: white;
     font-size: 1.5rem;
     font-weight: 700;
     padding: 1rem;
     margin: 0;
-    border-radius: 10px 10px 0 0; /* Rounded top corners */
+    border-radius: 10px 10px 0 0;
 }
 
 /* Card Content */
@@ -195,13 +266,13 @@ h2 {
 }
 
 .amount-text {
-    color: #ff7f50; /* Orange color */
+    color: #ff7f50;
     font-weight: 600;
     font-size: 1.1rem;
 }
 
 .donate-button {
-    background: #ff7f50; /* Orange color */
+    background: #ff7f50;
     color: white !important;
     padding: 0.5rem 1.25rem;
     border-radius: 25px;
@@ -210,17 +281,13 @@ h2 {
 }
 
 .donate-button:hover {
-    background: #e76b3c; /* Darker orange on hover */
+    background: #e76b3c;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .donation-cards {
         grid-template-columns: repeat(2, 1fr);
-    }
-    
-    body {
-        margin-bottom: 120px; /* More space on mobile */
     }
 }
 
@@ -229,26 +296,23 @@ h2 {
         grid-template-columns: 1fr;
     }
 }
-/* endofline */
-
 
 /* LogoCSS */
 /* Logo Container */
-/* Centering the logo and text */
 .logo-container {
     display: flex;
-    align-items: center; /* Align items vertically */
-    justify-content: center; /* Center the whole container horizontally */
-    gap: 15px; /* Space between logo and text */
-    width: 100%; /* Ensure it takes the full width */
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
     text-align: center;
-    margin: 0 auto; /* Center the whole container */
+    margin: 0 auto;
 }
 
 /* Logo Styling */
 .logo {
-    width: 100px; /* Adjust size as needed */
-    height: auto; /* Maintain aspect ratio */
+    width: 100px;
+    height: auto;
 }
 
 /* Text Styling */
@@ -256,7 +320,7 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: left; /* Keep text aligned left */
+    text-align: left;
     line-height: 1.2;
 }
 
@@ -283,19 +347,35 @@ h2 {
     .logo-text {
         text-align: center;
     }
+    
+    .line-1 {
+        font-size: 32px;
+    }
+    
+    .line-2 {
+        font-size: 28px;
+    }
 }
 
-/* endofline */
-
-
-
+/* Footer */
 footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-    padding: 15px 0;
-    background-color: #2c3e50;
+    background-color: #2c3e50 !important;
     color: white;
-    z-index: 1000;
+    position: relative;
+    margin-top: auto;
+}
+
+footer h6 {
+    color: #ff7f50;
+    font-weight: bold;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Section spacing */
+section, .card {
+    scroll-margin-top: 100px;
 }
