@@ -1,178 +1,270 @@
-<link rel="stylesheet" href="../style.css">
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumentasi Program - Baitul Maal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand text-white d-flex align-items-center" href="../index.html">
+                <img src="../logo/mku-logo-300x300.png" alt="Logo" width="30" height="30" class="me-2">
+                <span>Baitul Maal</span>
+            </a>
+            
+            <!-- Mobile menu button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="../index.html">🏠 Beranda</a>
+                    </li>
+                    
+                    <!-- Donation Programs Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            💝 Program Donasi
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../donation_page/cinta-yatim.html">💝 Cinta Yatim</a></li>
+                            <li><a class="dropdown-item" href="../donation_page/sunat-sehat.html">🏥 Sunat Sehat Gratis</a></li>
+                            <li><a class="dropdown-item" href="../donation_page/kafalah-pendidikan.html">📚 Kafalah Pendidikan</a></li>
+                            <li><a class="dropdown-item" href="../donation_page/ambulance-gratis.html">🚑 Ambulance Gratis</a></li>
+                            <li><a class="dropdown-item" href="../donation_page/santunan-dhuafa.html">🤲 Santunan Dhuafa</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../donation_page/donate.html">💳 Donasi Umum</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link text-white active" href="gallery.html">🖼️ Dokumentasi</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="../index.html#tentang">ℹ️ Tentang Kami</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="../index.html#kontak">📞 Kontak</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="../index.html#laporan">📊 Laporan</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<nav class="navbar navbar-expand-lg bg-primary">
-    <div class="container">
-        <a href="javascript:history.back()" class="btn-back">
-            <span>Back to Previous Page</span>
-        </a>
+    <!-- Gallery Content -->
+    <section class="gallery pt-5">
+        <div class="container">
+            <h2 class="text-white text-center mb-4">🖼️ Dokumentasi Program Kami</h2>
+            <p class="text-white text-center mb-5">Lihat berbagai kegiatan dan program yang telah kami laksanakan untuk membantu masyarakat</p>
+            <div class="gallery-grid" id="galleryContainer"></div>
+        </div>
+    </section>
+  
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="expanded-img">
     </div>
-</nav>
+  
+    <style>
+        /* Gallery Styles */
+        .gallery {
+            padding: 2rem 0;
+            min-height: 100vh;
+        }
+  
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem 0;
+        }
+  
+        .gallery-item {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+  
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+  
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+  
+        .lightbox-content {
+            display: block;
+            margin: auto;
+            max-width: 90%;
+            max-height: 80vh;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 5px;
+        }
+  
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+        }
+  
+        .close:hover {
+            color: #ff7f50;
+        }
+    </style>
+  
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h6>Kontak Kami</h6>
+                    <p class="mb-1">📱 WhatsApp: +62 822-2353-2223</p>
+                    <p class="mb-1">📧 Email: info@baitulmaal-ulaz.org</p>
+                </div>
+                <div class="col-md-6">
+                    <h6>Rekening Donasi</h6>
+                    <p class="mb-1">🏦 BSI: 7227625133</p>
+                    <p class="mb-1">a.n ULAZ MKU AMAL MUSLIM</p>
+                </div>
+            </div>
+            <hr class="my-3">
+            <p class="mb-0">© 2025 Yahya H. All rights reserved. | Baitul Maal - Divisi Sosialisasi</p>
+        </div>
+    </footer>
 
-<!-- Add this to your HTML -->
-<section class="gallery">
-    <h2>Gallery Program</h2>
-    <div class="gallery-grid" id="galleryContainer"></div>
-  </section>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Gallery Zoom Functionality
+        const lightbox = document.getElementById('lightbox');
+        const expandedImg = document.getElementById('expanded-img');
+        const closeBtn = document.querySelector('.close');
   
-  <!-- Lightbox Modal -->
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-content" id="expanded-img">
-  </div>
+        document.getElementById('galleryContainer').addEventListener('click', (e) => {
+            if (e.target.classList.contains('gallery-item')) {
+                lightbox.style.display = 'block';
+                expandedImg.src = e.target.dataset.full;
+            }
+        });
   
-  <style>
-  /* Gallery Styles */
-  .gallery {
-    padding: 2rem;
-    text-align: center;
-  }
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
   
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
-  }
+        window.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
   
-  .gallery-item {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    cursor: pointer;
-    transition: transform 0.3s;
-    border-radius: 8px;
-  }
-  
-  .gallery-item:hover {
-    transform: scale(1.03);
-  }
-  
-  /* Lightbox Styles */
-  .lightbox {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-  }
-  
-  .lightbox-content {
-    display: block;
-    margin: auto;
-    max-width: 90%;
-    max-height: 80vh;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 5px;
-  }
-  
-  .close {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .close:hover {
-    color: #ccc;
-  }
-  </style>
-  
-  <script>
-  // Gallery Zoom Functionality
-  const lightbox = document.getElementById('lightbox');
-  const expandedImg = document.getElementById('expanded-img');
-  const closeBtn = document.querySelector('.close');
-  
-  document.getElementById('galleryContainer').addEventListener('click', (e) => {
-    if (e.target.classList.contains('gallery-item')) {
-      lightbox.style.display = 'block';
-      expandedImg.src = e.target.dataset.full;
-    }
-  });
-  
-  closeBtn.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-  });
-  
-  window.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-      lightbox.style.display = 'none';
-    }
-  });
-  
-  // Close with ESC key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      lightbox.style.display = 'none';
-    }
-  });
+        // Close with ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                lightbox.style.display = 'none';
+            }
+        });
 
-// 1. Create an array of image objects
-const galleryImages = [
-  {
-    thumb: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp", // Thumbnail URL
-    full: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",   // Full-size URL
-    alt: "Orphanage Program 2024"
-  },
-  {
-    thumb: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
-    full: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
-    alt: "Food Distribution 2024"
-  },
-  {
-    thumb: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
-    full: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
-    alt: "Food Distribution 2024"
-  },
-  {
-    thumb: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
-    full: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
-    alt: "Food Distribution 2024"
-  },
-  {
-    thumb: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
-    full: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
-    alt: "Food Distribution 2024"
-  },
-  {
-    thumb: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
-    full: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
-    alt: "Food Distribution 2024"
-  },
-  {
-    thumb: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
-    full: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
-    alt: "Food Distribution 2024"
-  },
-  // Add more images here...
-];
+        // Gallery Images Array
+        const galleryImages = [
+            {
+                thumb: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
+                full: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
+                alt: "Program Cinta Yatim 2024"
+            },
+            {
+                thumb: "https://i.ibb.co.com/QCm518C/DALL-E-2025-01-26-14-52-00-An-impactful-and-realistic-illustration-of-a-disaster-scene-showing-a-nat.webp",
+                full: "https://i.ibb.co.com/QCm518C/DALL-E-2025-01-26-14-52-00-An-impactful-and-realistic-illustration-of-a-disaster-scene-showing-a-nat.webp",
+                alt: "Bantuan Bencana Alam 2024"
+            },
+            {
+                thumb: "https://i.ibb.co.com/c3cJNZm/DALL-E-2025-01-26-14-56-46-A-dramatic-illustration-of-a-disaster-scene-at-the-National-Monument-Mona.webp",
+                full: "https://i.ibb.co.com/c3cJNZm/DALL-E-2025-01-26-14-56-46-A-dramatic-illustration-of-a-disaster-scene-at-the-National-Monument-Mona.webp",
+                alt: "Program Kemanusiaan 2024"
+            },
+            // Add duplicate images to show more items in gallery
+            {
+                thumb: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
+                full: "https://i.ibb.co.com/k9Q0v4g/DALL-E-2025-01-26-12-48-41-A-heartwarming-illustration-of-a-group-of-orphan-kids-of-various-ages-and.webp",
+                alt: "Santunan Dhuafa 2024"
+            },
+            {
+                thumb: "https://i.ibb.co.com/QCm518C/DALL-E-2025-01-26-14-52-00-An-impactful-and-realistic-illustration-of-a-disaster-scene-showing-a-nat.webp",
+                full: "https://i.ibb.co.com/QCm518C/DALL-E-2025-01-26-14-52-00-An-impactful-and-realistic-illustration-of-a-disaster-scene-showing-a-nat.webp",
+                alt: "Ambulance Gratis 2024"
+            },
+            {
+                thumb: "https://i.ibb.co.com/c3cJNZm/DALL-E-2025-01-26-14-56-46-A-dramatic-illustration-of-a-disaster-scene-at-the-National-Monument-Mona.webp",
+                full: "https://i.ibb.co.com/c3cJNZm/DALL-E-2025-01-26-14-56-46-A-dramatic-illustration-of-a-disaster-scene-at-the-National-Monument-Mona.webp",
+                alt: "Kafalah Pendidikan 2024"
+            }
+        ];
 
-// 2. Function to generate gallery items
-function generateGallery() {
-  const container = document.getElementById('galleryContainer');
-  
-  galleryImages.forEach(image => {
-    const imgElement = document.createElement('img');
-    imgElement.className = 'gallery-item';
-    imgElement.src = image.thumb;
-    imgElement.dataset.full = image.full;
-    imgElement.alt = image.alt;
-    
-    container.appendChild(imgElement);
-  });
-}
+        // Generate Gallery
+        function generateGallery() {
+            const container = document.getElementById('galleryContainer');
+            
+            galleryImages.forEach(image => {
+                const imgElement = document.createElement('img');
+                imgElement.className = 'gallery-item';
+                imgElement.src = image.thumb;
+                imgElement.dataset.full = image.full;
+                imgElement.alt = image.alt;
+                
+                container.appendChild(imgElement);
+            });
+        }
 
-// 3. Initialize gallery when page loads
-window.addEventListener('DOMContentLoaded', generateGallery);
+        // Initialize gallery when page loads
+        window.addEventListener('DOMContentLoaded', generateGallery);
 
+        // Auto-collapse mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        const menuToggle = document.getElementById('navbarNav');
+        const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false});
 
-
-  </script>
+        navLinks.forEach((l) => {
+            l.addEventListener('click', () => { 
+                if (menuToggle.classList.contains('show')) {
+                    bsCollapse.hide();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
